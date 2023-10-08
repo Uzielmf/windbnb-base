@@ -1,0 +1,66 @@
+/* 
+Funtes a utilizar en el proyecto
+font-family: 'Montserrat', sans-serif; Fuente principal
+font-family: 'Mulish', sans-serif; Fuente secundaria */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav-container{
+    height: 30%;
+}
+
+.nav-principal{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 3rem;
+    align-items: center;
+}
+
+.nav-information{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+    height: 3rem;
+    padding: 1rem;
+}
+
+.logo{
+    color: rgba(235, 87, 87, 1);
+}
+
+.lupa{
+    height: 2.1rem;
+    background: none;
+}
+.name-company{
+    color: rgba(235, 87, 87, 1);
+}
+
+.buscardor{
+    border: 1px solid rgba(242, 242, 242, 1);
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px darkgray;
+}
+
+.buscardor input{
+    border: none;
+    height: 2rem;
+}
+
+.buscardor input:nth-child(2){
+    border-left: 1px solid rgba(242, 242, 242, 1);
+}
+
+.form-buscador{
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.img-arbnb{
+    width: 18rem;
+    height: 13rem;
+
+}
+
