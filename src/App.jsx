@@ -8,6 +8,7 @@ function App() {
   // La variable data es la que va a almacenar los datos de "stays.json" y setData nos ayudará a guardar esos datos en esa variable. Es necesario que inicialicemos esa variable como un array vacío para evitar errores.
   const [data, setData] = useState([]);
 
+
   // Función para traer los datos de "stays.json".
   const getData = async () => {
     // Esta sentencia try-catch sirve para manejar los errores que se podrían generar al importar los datos de "stays.json".
@@ -29,13 +30,27 @@ function App() {
 
   ////////////////// pruebas para el filtro
 
+  const filterData = (text) => {
+    const filtrado = data.filter( (elemento) => elemento.city.toLowerCase().includes(text.toLowerCase()))
   
+    return filtrado
+  
+  }
+
+  const handleFormFilter = (e)=> {
+    e.preventDefault()
+    const text = e.target[0].value
+    const filtrado = filterData(text)
+    filtrado == '' ? alert('Lo sentimos no tenemos Airbnb en esa ciudad') :setData(filtrado)
+    
+  }
+
 
   // Puedes ver la variable data en consola.
   console.log(data);
   return (
     <>
-    <Nav />
+    <Nav  FuncionSubmit = {handleFormFilter}/>
     {/* Aquí te dejo un ejemplo de cómo podrías imprimir varios elementos a la vez. */}
 
     <div className="cards-container">

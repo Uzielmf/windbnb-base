@@ -33,6 +33,7 @@ font-family: 'Mulish', sans-serif; Fuente secundaria */
 .lupa{
     height: 2.1rem;
     background: none;
+    cursor: pointer;
 }
 .name-company{
     color: rgba(235, 87, 87, 1);
@@ -42,11 +43,13 @@ font-family: 'Mulish', sans-serif; Fuente secundaria */
     border: 1px solid rgba(242, 242, 242, 1);
     border-radius: 20px;
     box-shadow: 2px 2px 5px darkgray;
+    text-align: center;
 }
 
 .buscardor input{
     border: none;
     height: 2rem;
+
 }
 
 .buscardor input:nth-child(2){

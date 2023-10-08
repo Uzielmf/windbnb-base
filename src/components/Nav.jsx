@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Nav() {
+function Nav({FuncionSubmit}) {
   return (
     <div className='nav-container'>
         
@@ -8,7 +8,7 @@ function Nav() {
             <div className='name-company'><span class="material-symbols-outlined logo">home</span> NIGGABNB</div>
 
             <div className='buscardor'>
-                <form className='form-buscador'>
+                <form className='form-buscador' onSubmit={FuncionSubmit}>
                 <input type="text" placeholder=' Lugar'/>
                 <input type="text" placeholder=' Add guests'/>
                 <button type='submit'><span class="material-symbols-outlined lupa" >
