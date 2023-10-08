@@ -58,9 +58,9 @@ font-family: 'Mulish', sans-serif; Fuente secundaria */
     padding-left: 10px;
 }
 
-.img-arbnb{
-    width: 18rem;
-    height: 13rem;
-
+.cards-container{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto ;
 }
-

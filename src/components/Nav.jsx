@@ -5,7 +5,7 @@ function Nav() {
     <div className='nav-container'>
         
         <div className='nav-principal'>
-            <div className='name-company'><span class="material-symbols-outlined logo">home</span> windbnb</div>
+            <div className='name-company'><span class="material-symbols-outlined logo">home</span> NIGGABNB</div>
 
             <div className='buscardor'>
                 <form className='form-buscador'>

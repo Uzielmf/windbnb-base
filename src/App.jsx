@@ -26,6 +26,11 @@ function App() {
      getData();
   }, []);
 
+
+  ////////////////// pruebas para el filtro
+
+  
+
   // Puedes ver la variable data en consola.
   console.log(data);
   return (
@@ -33,11 +38,13 @@ function App() {
     <Nav />
     {/* Aquí te dejo un ejemplo de cómo podrías imprimir varios elementos a la vez. */}
 
+    <div className="cards-container">
       {data.map((el, i) => {
         return (
         <Card elemento={el} index={i}/>
         )
       })}
+      </div>
     </>
   );
 }
