@@ -7,6 +7,9 @@ import Card from "./components/Card";
 function App() {
   // La variable data es la que va a almacenar los datos de "stays.json" y setData nos ayudará a guardar esos datos en esa variable. Es necesario que inicialicemos esa variable como un array vacío para evitar errores.
   const [data, setData] = useState([]);
+  const [filtrado,setFiltrado] = useState([])
+
+
 
 
   // Función para traer los datos de "stays.json".
@@ -17,6 +20,7 @@ function App() {
       const resJson = await res.json();
       // Aquí guardamos los datos de "stays.json" en la variable data.
       setData(resJson);
+      setFiltrado(resJson)
     } catch (error) {
       console.log(error);
     }
@@ -30,8 +34,8 @@ function App() {
 
   ////////////////// pruebas para el filtro
 
-  const filterData = (text) => {
-    const filtrado = data.filter( (elemento) => elemento.city.toLowerCase().includes(text.toLowerCase()))
+  const filterData = (text, maxGuests) => {
+    const filtrado = data.filter( (elemento) => elemento.city.toLowerCase().includes(text.toLowerCase()) &&  elemento.maxGuests >= maxGuests)
   
     return filtrado
   
@@ -40,8 +44,9 @@ function App() {
   const handleFormFilter = (e)=> {
     e.preventDefault()
     const text = e.target[0].value
-    const filtrado = filterData(text)
-    filtrado == '' ? alert('Lo sentimos no tenemos Airbnb en esa ciudad') :setData(filtrado)
+    const maxGuests = e.target[1].value
+    const filtrado = filterData(text,maxGuests)
+    filtrado == '' ? alert('Lo sentimos, no tenemos un Windbnb con esas caracteristicas') :setFiltrado(filtrado)
     
   }
 
@@ -50,11 +55,11 @@ function App() {
   console.log(data);
   return (
     <>
-    <Nav  FuncionSubmit = {handleFormFilter}/>
+    <Nav  FuncionSubmit = {handleFormFilter} />
     {/* Aquí te dejo un ejemplo de cómo podrías imprimir varios elementos a la vez. */}
 
     <div className="cards-container">
-      {data.map((el, i) => {
+      {filtrado.map((el, i) => {
         return (
         <Card elemento={el} index={i}/>
         )

@@ -5,7 +5,7 @@ function Nav({FuncionSubmit}) {
     <div className='nav-container'>
         
         <div className='nav-principal'>
-            <div className='name-company'><span class="material-symbols-outlined logo">home</span> NIGGABNB</div>
+            <div className='name-company'><span class="material-symbols-outlined logo">home</span> Windbnb</div>
 
             <div className='buscardor'>
                 <form className='form-buscador' onSubmit={FuncionSubmit}>
@@ -20,7 +20,7 @@ search
 
         <div className='nav-information'>
             <h1>Stays in Finland</h1>
-            <small># huspedes</small>
+            <small>huspedes</small>
         </div>
     </div>
   )
